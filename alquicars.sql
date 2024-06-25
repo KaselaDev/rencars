@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `alquicars`
 --
+CREATE DATABASE alquicars; 
 
 -- --------------------------------------------------------
 
@@ -27,7 +28,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `rentas`
 --
 
-CREATE TABLE `rentas` (
+CREATE TABLE alquicars.`rentas` (
   `idRenta` int(50) NOT NULL,
   `idUsuario` varchar(50) NOT NULL,
   `auto` varchar(50) NOT NULL,
@@ -40,7 +41,7 @@ CREATE TABLE `rentas` (
 -- Volcado de datos para la tabla `rentas`
 --
 
-INSERT INTO `rentas` (`idRenta`, `idUsuario`, `auto`, `desde`, `hasta`, `estado`) VALUES
+INSERT INTO alquicars.`rentas` (`idRenta`, `idUsuario`, `auto`, `desde`, `hasta`, `estado`) VALUES
 (2, 'santiagocasellas2005@gmail.com', 'pickup', '2024-03-31', '2024-06-06', 'Aceptado'),
 (3, 'niideapadre@gmail.com', 'Sedán', '2024-03-31', '2024-06-06', 'Cancelado'),
 (4, 'niideapadre@gmail.com', 'suv', '0003-03-31', '0044-04-04', 'Pendiente');
@@ -51,7 +52,7 @@ INSERT INTO `rentas` (`idRenta`, `idUsuario`, `auto`, `desde`, `hasta`, `estado`
 -- Estructura de tabla para la tabla `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE alquicars.`users` (
   `idUsuario` int(10) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -63,7 +64,7 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`idUsuario`, `password`, `email`, `creacionCuenta`, `rol`) VALUES
+INSERT INTO alquicars.`users` (`idUsuario`, `password`, `email`, `creacionCuenta`, `rol`) VALUES
 (1, '123', 'santiagocasellas2005@gmail.com', '24-06-2024', 'admin'),
 (3, '123', 'niideapadre@gmail.com', '25-06-24', 'user');
 
@@ -74,13 +75,13 @@ INSERT INTO `users` (`idUsuario`, `password`, `email`, `creacionCuenta`, `rol`) 
 --
 -- Indices de la tabla `rentas`
 --
-ALTER TABLE `rentas`
+ALTER TABLE alquicars.`rentas`
   ADD PRIMARY KEY (`idRenta`);
 
 --
 -- Indices de la tabla `users`
 --
-ALTER TABLE `users`
+ALTER TABLE alquicars.`users`
   ADD PRIMARY KEY (`idUsuario`);
 
 --
@@ -90,13 +91,13 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT de la tabla `rentas`
 --
-ALTER TABLE `rentas`
+ALTER TABLE alquicars.`rentas`
   MODIFY `idRenta` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
-ALTER TABLE `users`
+ALTER TABLE alquicars.`users`
   MODIFY `idUsuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
